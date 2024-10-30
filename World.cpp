@@ -5,7 +5,7 @@
 // Длительность одного тика симуляции.
 // Подробнее см. update()
 // Изменять не следует
-static constexpr double timePerTick = 0.0002;
+static constexpr double timePerTick = 0.001;
 
 /**
  * Конструирует объект мира для симуляции
@@ -70,7 +70,8 @@ World::World(const std::string& worldFilePath) {
         // добавьте его в конец контейнера вызовом
         // balls.push_back(ball);
         Point ball_cetner{x, y};
-        Velocity ball_velocity{vx, vy};
+        Point velocity_point{vx, vy};
+        Velocity ball_velocity{velocity_point};
         Color ball_color{red, green, blue};
         Ball ball(ball_cetner, ball_velocity, radius, ball_color);
         balls.push_back(ball);
